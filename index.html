@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>MUJI 良品食单 · 零食与食品</title>
+<title>MUJI 良品食单 · 休食饮料</title>
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="良品食单">
 <meta name="theme-color" content="#F4F2EB">
@@ -16,34 +16,39 @@
   --sans:"Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
 }
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-body{background:var(--bg);color:var(--ink);font-family:var(--sans);max-width:760px;margin:0 auto;padding:0 14px 110px;-webkit-font-smoothing:antialiased}
-header{padding:46px 4px 0;display:flex;align-items:flex-start;justify-content:space-between}
-.logo .muji{font-size:34px;font-weight:800;letter-spacing:.02em;line-height:1}
-.logo .kanji{font-size:12.5px;font-weight:700;letter-spacing:.42em;margin-top:4px}
-.logo .en{font-family:var(--sans);font-size:10px;letter-spacing:.3em;color:var(--dim);margin-top:6px}
-.brandline{width:46px;height:46px;background:var(--red);border-radius:4px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:11px;font-weight:800;letter-spacing:.06em;writing-mode:vertical-rl;flex:none}
-.intro{margin-top:26px;padding:0 4px}
-.intro h1{font-size:21px;letter-spacing:.06em;font-weight:700}
-.intro p{font-size:12px;color:var(--dim);line-height:1.9;margin-top:8px}
-.tabs{display:flex;gap:0;margin-top:22px;border-bottom:2px solid var(--ink);overflow-x:auto;scrollbar-width:none}
-.tabs::-webkit-scrollbar{display:none}
-.tab{flex:none;font-size:13px;font-weight:700;letter-spacing:.08em;padding:11px 15px;color:var(--dim);cursor:pointer;border:none;background:none;position:relative}
-.tab.on{color:var(--ink)}
-.tab.on::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:3px;background:var(--red)}
-.shelf{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:18px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:6px;overflow:hidden;cursor:pointer;position:relative;transition:box-shadow .2s}
-.card:active{box-shadow:0 4px 18px rgba(36,31,27,.12)}
-.card .ph{aspect-ratio:1;background:#EDEAE2;display:flex;align-items:center;justify-content:center;color:var(--dim);font-size:12px;letter-spacing:.2em}
-.card img{width:100%;height:100%;object-fit:cover;display:block;aspect-ratio:1}
-.card .info{padding:10px 12px 12px;border-top:1px solid #EFECE4}
-.card .cat{font-size:9px;letter-spacing:.22em;color:var(--dim);text-transform:uppercase}
-.card .nm{font-size:13.5px;font-weight:700;margin-top:4px;line-height:1.5}
-.card .pr{font-size:14px;font-weight:800;color:var(--red);margin-top:5px}
-.card .pr small{font-size:9px;font-weight:400;color:var(--dim);letter-spacing:.1em;margin-left:4px}
-.want{position:absolute;top:9px;right:9px;width:30px;height:30px;border-radius:50%;background:rgba(255,255,255,.92);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:14px;color:var(--dim)}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased;padding-bottom:86px}
+.top{max-width:760px;margin:0 auto;padding:20px 16px 12px;display:flex;align-items:center;justify-content:space-between}
+.top .l{display:flex;align-items:center;gap:10px}
+.top .logo{background:var(--red);color:#fff;font-weight:800;font-size:15px;padding:7px 11px;border-radius:4px;letter-spacing:.04em}
+.top .kt{font-size:11px;letter-spacing:.28em;color:var(--dim);margin-top:3px}
+.top .kr{font-size:16px;font-weight:800;letter-spacing:.06em}
+.top .r{font-size:10px;color:var(--dim);letter-spacing:.1em;text-align:right;line-height:1.8}
+.menu{max-width:760px;margin:0 auto;display:flex;align-items:stretch;background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line);height:calc(100vh - 150px);min-height:480px}
+.side{width:96px;flex:none;overflow-y:auto;background:#EDEAE2;border-right:1px solid var(--line);scrollbar-width:none}
+.side::-webkit-scrollbar{display:none}
+.s-item{display:block;width:100%;text-align:center;padding:16px 4px;font-size:12px;color:var(--ink);border:none;background:none;cursor:pointer;position:relative;letter-spacing:.04em;line-height:1.4}
+.s-item small{display:block;font-size:8.5px;color:var(--dim);margin-top:3px}
+.s-item.on{background:var(--card);color:var(--red);font-weight:800}
+.s-item.on::before{content:"";position:absolute;left:0;top:12px;bottom:12px;width:3px;background:var(--red);border-radius:0 2px 2px 0}
+.goods{flex:1;overflow-y:auto;padding:12px;scrollbar-width:none}
+.goods::-webkit-scrollbar{display:none}
+.g-title{font-size:13px;font-weight:800;letter-spacing:.08em;padding:4px 2px 10px}
+.g-title small{font-weight:400;color:var(--dim);font-size:10px;margin-left:6px;letter-spacing:.12em}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:8px;overflow:hidden;cursor:pointer;position:relative}
+.card img{width:100%;aspect-ratio:1;object-fit:cover;display:block;background:#EDEAE2}
+.card .ph{aspect-ratio:1;display:flex;align-items:center;justify-content:center;color:var(--dim);font-size:11px;letter-spacing:.2em;background:#EDEAE2}
+.card .info{padding:8px 9px 9px}
+.card .nm{font-size:12px;font-weight:700;line-height:1.45}
+.card .spec{font-size:9.5px;color:var(--dim);margin-top:3px;letter-spacing:.04em}
+.card .row2{display:flex;align-items:baseline;justify-content:space-between;margin-top:5px}
+.card .pr{font-size:14.5px;font-weight:800;color:var(--red)}
+.card .pr small{font-size:9px;font-weight:400;color:var(--dim);margin-left:2px}
+.card .sold{font-size:8.5px;color:var(--dim)}
+.want{position:absolute;top:7px;right:7px;width:27px;height:27px;border-radius:50%;background:rgba(255,255,255,.94);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:13px;color:var(--dim)}
 .want.on{background:var(--red);border-color:var(--red);color:#fff}
-/* 底部购物清单栏 */
-.cartbar{position:fixed;left:0;right:0;bottom:0;z-index:800;background:var(--ink);color:#F4F2EB;display:flex;align-items:center;gap:14px;padding:13px 18px calc(13px + env(safe-area-inset-bottom))}
+/* 底部清单 */
+.cartbar{position:fixed;left:0;right:0;bottom:0;z-index:800;background:var(--ink);color:#F4F2EB;display:flex;align-items:center;gap:14px;padding:13px 18px calc(13px + env(safe-area-inset-bottom));max-width:760px;margin:0 auto}
 .cartbar .cnt{font-size:12px;letter-spacing:.1em;flex:1}
 .cartbar .cnt b{font-size:16px;margin:0 3px}
 .cartbar .sum{font-size:15px;font-weight:800}
@@ -58,7 +63,7 @@ header{padding:46px 4px 0;display:flex;align-items:flex-start;justify-content:sp
 .d-grab{width:40px;height:4px;border-radius:2px;background:var(--line);margin:0 auto 14px}
 .d-in img{width:100%;max-height:46vh;object-fit:cover;border-radius:8px;border:1px solid var(--line)}
 .d-in .cat{font-size:9.5px;letter-spacing:.24em;color:var(--dim);margin-top:14px}
-.d-in h2{font-size:19px;margin-top:5px;line-height:1.5}
+.d-in h2{font-size:18px;margin-top:5px;line-height:1.5}
 .d-in .pr{font-size:21px;font-weight:800;color:var(--red);margin-top:6px}
 .d-in .pr small{font-size:10px;font-weight:400;color:var(--dim);margin-left:5px}
 .d-in p.desc{font-size:13px;color:#5C564D;line-height:2;margin-top:12px}
@@ -66,95 +71,121 @@ header{padding:46px 4px 0;display:flex;align-items:flex-start;justify-content:sp
 .d-act button{flex:1;padding:13px;border-radius:8px;font-size:13.5px;font-weight:700;letter-spacing:.1em;border:none;cursor:pointer}
 .btn-red{background:var(--red);color:#fff}
 .btn-ghost{background:none;border:1px solid var(--ink)!important;color:var(--ink)}
-footer{margin-top:40px;padding:0 4px;font-size:10px;color:var(--dim);line-height:2;letter-spacing:.06em}
-@media(min-width:600px){.shelf{grid-template-columns:repeat(3,1fr)}}
+#toast{position:fixed;bottom:80px;left:50%;transform:translateX(-50%);background:#241F1B;color:#F4F2EB;font-size:12px;letter-spacing:.1em;padding:9px 18px;border-radius:99px;z-index:970;opacity:0;transition:opacity .3s;pointer-events:none}
+@media(min-width:620px){.side{width:150px}.grid{grid-template-columns:repeat(3,1fr)}}
 </style>
 </head>
 <body>
-<header>
-  <div class="logo">
-    <div class="muji">MUJI</div>
-    <div class="kanji">無印良品</div>
-    <div class="en">GOODS · FOOD & SNACK</div>
+<div class="top">
+  <div class="l">
+    <div class="logo">MUJI 無印良品</div>
+    <div><div class="kr">良品食单 · 休食饮料</div><div class="kt">SNACKS & DRINKS MENU</div></div>
   </div>
-  <div class="brandline">良品食单</div>
-</header>
-<div class="intro">
-  <h1>零食与食品 · 货架</h1>
-  <p>从网红棉花糖到咖喱调理包，22 件常被反复回购的无印食品。价格为中国内地门店参考零售价，以门店与官方渠道实际标价为准。</p>
+  <div class="r">13 分类 · 39 件<br>美团外卖参考价</div>
 </div>
-<div class="tabs" id="tabs"></div>
-<div class="shelf" id="shelf"></div>
-<footer>/// 图片为网络实物参考图，包装以门店在售版本为准 · 价格仅供参考<br>/// 良品食单 · 想吃清单保存在本机</footer>
-<div class="cartbar" id="cartbar">
+<div class="menu">
+  <div class="side" id="side"></div>
+  <div class="goods" id="goods"></div>
+</div>
+<div class="cartbar">
   <span class="cnt">想吃清单 <b id="cartN">0</b> 件</span>
   <span class="sum"><i>约</i>¥<span id="cartSum">0</span></span>
   <button onclick="clearCart()">清空</button>
 </div>
 <div class="mask" id="mask" onclick="closeDrawer()"></div>
 <div class="drawer" id="drawer"><div class="d-in" id="dIn"><div class="d-grab"></div></div></div>
+<div id="toast"></div>
 <script>
-const CATS = [["all","全部"],["candy","糖果巧克力"],["bake","饼干膨化"],["tea","茶饮"],["meal","速食调理"],["dry","果干坚果"],["sweet","甜品冰品"]];
-const ITEMS = [
- {id:"candy_mash", cat:"candy", nm:"葡萄味软糖", pr:15, d:"酸甜葡萄味软糖，小袋独立包装，办公室抽屉常备款。"},
- {id:"candy_gummy", cat:"candy", nm:"助眠软糖 GABA", pr:18, d:"含 GABA 功能性成分的网红软糖，白葡萄味，睡前一袋的仪式感。"},
- {id:"choco_wafer", cat:"candy", nm:"巧克力龙", pr:12, d:"红袋圈圈造型巧克力脆脆，酸奶涂层款，一口一个停不下来。"},
- {id:"choco_square", cat:"candy", nm:"巧克力曲奇盒", pr:22, d:"黑白极简盒装的巧克力曲奇，配巧克力夹心球，送礼体面自留过瘾。"},
- {id:"candy_kanro", cat:"candy", nm:"罐装金平糖", pr:15, d:"玻璃罐装的星星糖，复古感和菓子，撒在甜品上超可爱。"},
- {id:"chip_potato", cat:"bake", nm:"薯片（淡盐味）", pr:12, d:"薄切土豆片只调味海盐，酥脆不油腻，MUJI 零食人气王。"},
- {id:"rice_cracker", cat:"bake", nm:"墨鱼味仙贝脆片", pr:12, d:"墨鱼汁染黑的日式仙贝脆片，咸鲜酥脆，颜值与口味都出圈。"},
- {id:"cookie_butter", cat:"bake", nm:"黄油曲奇罐", pr:45, d:"北海道风黄油曲奇，酥到掉渣，罐装送人自留两相宜。"},
- {id:"cookie_butterfly", cat:"bake", nm:"鸡蛋蛋卷（盒装）", pr:25, d:"添加整颗鸡蛋的四味蛋卷，蛋香四溢，酥脆掉渣，茶歇标配。"},
- {id:"snack_eggrand", cat:"bake", nm:"豆乳蛋卷小袋", pr:18, d:"豆乳风味蛋卷独立小袋装，包里随手抓一根的早餐救急款。"},
- {id:"tea_bag", cat:"tea", nm:"豆乳红茶茶包", pr:32, d:"豆香与红茶平衡的经典款，冷泡热泡都好喝。"},
- {id:"tea_royal", cat:"tea", nm:"熔茶牛乳奶茶", pr:15, d:"焙茶风味奶茶粉，温水一冲即得，甜度温和的日式奶茶。"},
- {id:"noodle_ramen", cat:"meal", nm:"豆奶鸡汤汤面", pr:15, d:"温和豆乳鸡汤汤底，五分钟煮出一碗日式暖胃面。"},
- {id:"noodle_dandan", cat:"meal", nm:"四川担担面", pr:15, d:"微辣芝麻担担面，泡煮两可，深夜食堂人气速食。"},
- {id:"curry_retort", cat:"meal", nm:"咖喱调理包", pr:25, d:"鸡肉/牛肉/蔬菜多口味，倒在米饭上三分钟还原店内咖喱。"},
- {id:"soup_freeze", cat:"meal", nm:"冻干速食汤", pr:15, d:"味噌汤/洋葱汤等多口味冻干汤，热水一冲即成。"},
- {id:"nut_mixed", cat:"dry", nm:"无糖混合坚果", pr:29, d:"不加糖盐的腰果杏仁核桃混合，健康零食区扛把子。"},
- {id:"dry_mango", cat:"dry", nm:"无糖芒果干", pr:19, d:"只烘干不加糖，酸香浓郁，果干区必买。"},
- {id:"dry_banana", cat:"bake", nm:"抹茶夹心薄饼", pr:22, d:"宇治抹茶夹心的法式薄饼，16 枚入，茶味微苦平衡甜度。"},
- {id:"jelly_cup", cat:"sweet", nm:"白桃果汁果冻", pr:12, d:"挤出式果汁果冻，白桃味最热门，夏日解暑神器。"},
- {id:"yokan_bean", cat:"sweet", nm:"巧克力羊羹", pr:18, d:"传统羊羹与巧克力的融合版，冷藏后切块吃风味最佳。"},
- {id:"snack_icecream", cat:"sweet", nm:"熔茶布丁", pr:12, d:"焙茶风味熔岩布丁，冷藏柜人气甜品，入口即化。"}
+const CATS = [
+ ["all","全部","39"],["hot","热卖零食","3"],["health","健康食品","3"],["candy","糖巧果冻","4"],
+ ["pocket","口袋零食","4"],["puff","膨化零食","3"],["bake","饼干糕点","4"],["drink","饮用水&饮料","3"],
+ ["seaweed","肉脯海苔","2"],["brew","冲调饮品","3"],["meal","方便速食","4"],["dry","果干蜜饯","3"],
+ ["grocer","杂货食品","2"],["bag","零食礼包","1"]
 ];
-const CATN = {}; CATS.forEach(c=>CATN[c[0]]=c[1]);
+const ITEMS = [
+ {id:"hot_mashmallow",cat:"hot",nm:"棉花糖（原味+草莓）",spec:"22g×2",pr:12,sold:"3000+",d:"回购率最高的入门款，入口即化的轻云朵。"},
+ {id:"hot_chocoring",cat:"hot",nm:"巧克力龙",spec:"32g",pr:8,sold:"2000+",d:"红袋圈圈造型，酸奶巧克力脆脆，一口一个。"},
+ {id:"hot_pochicookie",cat:"hot",nm:"榛子米粉曲奇",spec:"25g",pr:6,sold:"200+",d:"米粉烤制的榛子曲奇，外卖店招牌爆款，6件30元回购公式。"},
+ {id:"health_nuts",cat:"health",nm:"无糖混合坚果",spec:"60g",pr:15,sold:"500+",d:"腰果杏仁核桃，不加糖不加盐。"},
+ {id:"health_gaba",cat:"health",nm:"助眠软糖 GABA",spec:"56g",pr:12,sold:"800+",d:"含 GABA 功能性成分，睡前一袋的仪式感。"},
+ {id:"health_vegchips",cat:"health",nm:"果蔬脆片",spec:"40g",pr:12,sold:"300+",d:"冻干蔬菜咸香脆，追剧低负担。"},
+ {id:"candy_grapegum",cat:"candy",nm:"葡萄味软糖",spec:"50g",pr:6,sold:"1000+",d:"酸甜葡萄味，办公室抽屉常备。"},
+ {id:"candy_choco",cat:"candy",nm:"方形巧克力（黑巧）",spec:"60g",pr:8,sold:"600+",d:"经典排块，烘焙也常用它。"},
+ {id:"candy_jelly",cat:"candy",nm:"白桃果汁果冻",spec:"150g",pr:8,sold:"900+",d:"挤出式果汁果冻，夏日解暑神器。"},
+ {id:"candy_sourgum",cat:"candy",nm:"草莓味酸砂软糖",spec:"45g",pr:6,sold:"400+",d:"酸砂外壳草莓芯，先酸后甜。"},
+ {id:"pocket_rycookie",cat:"pocket",nm:"曲奇小袋（黄油味）",spec:"20g",pr:5,sold:"300+",d:"独立小袋，包里随手抓一包。"},
+ {id:"pocket_saltedcrack",cat:"pocket",nm:"盐味硬烧仙贝",spec:"30g",pr:6,sold:"200+",d:"新潟风硬烧仙贝，咸香硬脆越嚼越香。"},
+ {id:"pocket_cafewafer",cat:"pocket",nm:"咖啡夹心威化",spec:"22g",pr:7,sold:"150+",d:"咖啡糖浆夹层威化，下午三点续命。"},
+ {id:"pocket_honeytwist",cat:"pocket",nm:"蜂蜜小麻花",spec:"25g",pr:6,sold:"180+",d:"蜂蜜涂层小麻花，嘎嘣脆。"},
+ {id:"puff_potatochips",cat:"puff",nm:"薯片（淡盐味）",spec:"60g",pr:8,sold:"1500+",d:"薄切土豆只调味海盐，零食人气王。"},
+ {id:"puff_ika",cat:"puff",nm:"墨鱼味仙贝脆片",spec:"45g",pr:8,sold:"700+",d:"墨鱼汁染黑的仙贝，咸鲜酥脆出圈款。"},
+ {id:"puff_brownrice",cat:"puff",nm:"糙米米果",spec:"40g",pr:6,sold:"400+",d:"糙米烘焙，比薯片清爽的选择。"},
+ {id:"bake_buttercookie",cat:"bake",nm:"黄油曲奇罐",spec:"200g",pr:30,sold:"500+",d:"北海道风黄油曲奇，罐装送人自留两相宜。"},
+ {id:"bake_eggroll",cat:"bake",nm:"鸡蛋蛋卷（盒装）",spec:"100g",pr:15,sold:"350+",d:"四味蛋卷，蛋香四溢酥脆掉渣。"},
+ {id:"bake_matchawafeel",cat:"bake",nm:"抹茶夹心薄饼",spec:"16枚",pr:15,sold:"600+",d:"宇治抹茶夹心，茶味微苦平衡甜度。"},
+ {id:"bake_chocowafer",cat:"bake",nm:"巧克力威化",spec:"30g",pr:8,sold:"450+",d:"多层威化巧克力夹心，一块接一块。"},
+ {id:"drink_water",cat:"drink",nm:"天然饮用水",spec:"330ml",pr:5,sold:"2000+",d:"软水口感顺滑，外卖凑单神器。"},
+ {id:"drink_greentea",cat:"drink",nm:"绿茶饮料",spec:"500ml",pr:6,sold:"800+",d:"清爽不涩，无糖党的日常。"},
+ {id:"drink_oolong",cat:"drink",nm:"无糖乌龙茶",spec:"500ml",pr:6,sold:"600+",d:"解腻担当，吃完炸物来一瓶。"},
+ {id:"seaweed_snack",cat:"seaweed",nm:"炭烤墨鱼条",spec:"20g",pr:8,sold:"500+",d:"炭烤鱿鱼墨条，嚼劲十足的海味零嘴。"},
+ {id:"seaweed_tsukudani",cat:"seaweed",nm:"海苔佃煮",spec:"60g",pr:12,sold:"200+",d:"甜咸海苔酱，白米饭的神仙搭档。"},
+ {id:"brew_royaltea",cat:"brew",nm:"皇家奶茶粉",spec:"200g",pr:15,sold:"700+",d:"温水一冲即得，冬天续命标配。"},
+ {id:"brew_dripcoffee",cat:"brew",nm:"挂耳咖啡（中烘）",spec:"8g×5",pr:20,sold:"300+",d:"办公室抽屉咖啡，十秒开工。"},
+ {id:"brew_cocoa",cat:"brew",nm:"可可粉",spec:"150g",pr:15,sold:"250+",d:"热牛奶一冲，自制热可可。"},
+ {id:"meal_curry",cat:"meal",nm:"咖喱调理包（鸡肉）",spec:"200g",pr:20,sold:"900+",d:"倒在米饭上三分钟还原店内咖喱。"},
+ {id:"meal_soymilkmen",cat:"meal",nm:"豆乳鸡汤汤面",spec:"130g",pr:12,sold:"400+",d:"温和豆乳汤底，五分钟一碗暖胃面。"},
+ {id:"meal_dandan",cat:"meal",nm:"四川担担面",spec:"160g",pr:12,sold:"550+",d:"微辣芝麻汤底，深夜食堂人气速食。"},
+ {id:"meal_misosoup",cat:"meal",nm:"冻干味噌汤",spec:"8g×4",pr:10,sold:"350+",d:"热水一冲即成，早餐夜宵两相宜。"},
+ {id:"dry_mango",cat:"dry",nm:"无糖芒果干",spec:"50g",pr:15,sold:"800+",d:"只烘干不加糖，酸香浓郁的必买。"},
+ {id:"dry_pineapple",cat:"dry",nm:"菠萝干",spec:"50g",pr:12,sold:"300+",d:"酸甜黄金片，果干区人气款。"},
+ {id:"dry_raisin",cat:"dry",nm:"葡萄干",spec:"60g",pr:10,sold:"280+",d:"无添加蔗糖，燕麦碗好搭档。"},
+ {id:"grocer_honey",cat:"grocer",nm:"天然蜂蜜",spec:"145g",pr:28,sold:"200+",d:"冲水泡茶都合适，早晨一勺的甜。"},
+ {id:"grocer_jam",cat:"grocer",nm:"草莓果酱",spec:"150g",pr:20,sold:"180+",d:"大颗果粒感，配吐司封神。"},
+ {id:"bag_fukubukuro",cat:"bag",nm:"零食福袋（3袋组合）",spec:"kinako豆粉球×3",pr:15,sold:"150+",d:"无印经典豆粉球糖三袋组，拆袋即惊喜。"}
+];
+const CATN = {}; CATS.forEach(c=>CATN[c[0]]={nm:c[1],n:c[2]});
 const KEY="muji_want";
 let want = JSON.parse(localStorage.getItem(KEY)||"{}");
 let curCat = "all";
 function save(){ localStorage.setItem(KEY, JSON.stringify(want)); }
-function renderTabs(){
-  document.getElementById("tabs").innerHTML = CATS.map(c=>
-    `<button class="tab ${curCat===c[0]?"on":""}" onclick="setCat('${c[0]}')">${c[1]}</button>`).join("");
+function renderSide(){
+  document.getElementById("side").innerHTML = CATS.map(c=>
+   `<button class="s-item ${curCat===c[0]?"on":""}" onclick="setCat('${c[0]}')">${c[1]}<small>${c[2]}件</small></button>`).join("");
 }
-function setCat(c){ curCat=c; renderTabs(); renderShelf(); }
-function renderShelf(){
-  const list = ITEMS.filter(i=>curCat==="all"||i.cat===curCat);
-  document.getElementById("shelf").innerHTML = list.map(i=>`
-   <div class="card" onclick="openDrawer('${i.id}')">
-     <img src="img/${i.id}.jpg" alt="${i.nm}" loading="lazy" onerror="this.outerHTML='<div class=ph>良品</div>'">
-     <div class="want ${want[i.id]?"on":""}" onclick="event.stopPropagation();toggleWant('${i.id}')">${want[i.id]?"♥":"♡"}</div>
-     <div class="info">
-       <div class="cat">${CATN[i.cat]}</div>
-       <div class="nm">${i.nm}</div>
-       <div class="pr">¥${i.pr}<small>参考价</small></div>
-     </div>
-   </div>`).join("");
+function setCat(c){
+  curCat=c; renderSide();
+  const g=document.getElementById("goods"); g.scrollTop=0; renderGoods();
+}
+function renderGoods(){
+  const list = curCat==="all" ? ITEMS : ITEMS.filter(i=>i.cat===curCat);
+  const title = curCat==="all" ? "全部分类" : CATN[curCat].nm;
+  document.getElementById("goods").innerHTML =
+   `<div class="g-title">${title}<small>${list.length} 件 · 美团参考价</small></div>
+    <div class="grid">` + list.map(i=>`
+     <div class="card" onclick="openDrawer('${i.id}')">
+       <img src="img2/${i.id}.jpg" alt="${i.nm}" loading="lazy" onerror="this.outerHTML='<div class=ph>良品</div>'">
+       <div class="want ${want[i.id]?"on":""}" onclick="event.stopPropagation();toggleWant('${i.id}')">${want[i.id]?"♥":"♡"}</div>
+       <div class="info">
+         <div class="nm">${i.nm}</div>
+         <div class="spec">${i.spec} · 已售${i.sold}</div>
+         <div class="row2"><span class="pr">¥${i.pr}<small>参考</small></span></div>
+       </div>
+     </div>`).join("") + `</div>`;
   renderCart();
 }
 function toggleWant(id){
-  want[id] = !want[id]; save(); renderShelf();
+  want[id] = !want[id]; save();
+  renderGoods();
   if(want[id]) toast("已加入想吃清单");
 }
 function openDrawer(id){
   const i = ITEMS.find(x=>x.id===id);
   document.getElementById("dIn").innerHTML = `
    <div class="d-grab"></div>
-   <img src="img/${i.id}.jpg" alt="${i.nm}" onerror="this.style.display='none'">
-   <div class="cat">${CATN[i.cat]} · MUJI 無印良品</div>
-   <h2>${i.nm}</h2>
-   <div class="pr">¥${i.pr}<small>参考零售价 · 以门店实际为准</small></div>
+   <img src="img2/${i.id}.jpg" alt="${i.nm}" onerror="this.style.display='none'">
+   <div class="cat">${CATN[i.cat].nm} · 无印良品 MUJI</div>
+   <h2>${i.nm} <span style="font-size:12px;color:var(--dim);font-weight:400">/ ${i.spec}</span></h2>
+   <div class="pr">¥${i.pr}<small>美团外卖参考价 · 以门店实际为准</small></div>
    <p class="desc">${i.d}</p>
    <div class="d-act">
      <button class="btn-red" onclick="toggleWant('${i.id}');closeDrawer()">${want[i.id]?"从清单移除":"想吃，加入清单"}</button>
@@ -172,17 +203,14 @@ function renderCart(){
   document.getElementById("cartN").textContent = ids.length;
   document.getElementById("cartSum").textContent = ids.reduce((s,id)=>s+ITEMS.find(x=>x.id===id).pr,0);
 }
-function clearCart(){ want={}; save(); renderShelf(); }
+function clearCart(){ want={}; save(); renderGoods(); }
 let toastTimer;
-function toast(msg){
-  let t = document.getElementById("toast");
-  if(!t){ t=document.createElement("div"); t.id="toast";
-    t.style.cssText="position:fixed;bottom:76px;left:50%;transform:translateX(-50%);background:#241F1B;color:#F4F2EB;font-size:12px;letter-spacing:.1em;padding:9px 18px;border-radius:99px;z-index:950;opacity:0;transition:opacity .3s";
-    document.body.appendChild(t); }
-  t.textContent = msg; t.style.opacity = 1;
-  clearTimeout(toastTimer); toastTimer = setTimeout(()=>t.style.opacity=0, 1500);
+function toast(m){
+  const t=document.getElementById("toast");
+  t.textContent=m; t.style.opacity=1;
+  clearTimeout(toastTimer); toastTimer=setTimeout(()=>t.style.opacity=0,1500);
 }
-renderTabs(); renderShelf();
+renderSide(); renderGoods();
 </script>
 </body>
 </html>
